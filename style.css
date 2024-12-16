@@ -1,0 +1,679 @@
+/* Google Font CDN Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+/* CSS Variables for Light and Dark Modes */
+:root {
+  --primary-color: #4070f4;
+  --secondary-color: #1b4bcf;
+  --bg-color: #ffffff;
+  --text-color: #0e2431;
+  --secondary-bg: #f0f8ff;
+  --secondary-text: #ffffff;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #6e93f7;
+  --scrollbar-thumb-hover: #4070f4;
+}
+
+[data-theme="dark"] {
+  --primary-color: #6e93f7;
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --secondary-bg: #23272f;
+  --secondary-text: #1a1a1a;
+  --scrollbar-track: #2c2c2c;
+  --scrollbar-thumb: #4070f4;
+  --scrollbar-thumb-hover: #6e93f7;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Navbar Styling */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+  background: transparent;
+}
+
+nav.sticky {
+  background: var(--primary-color);
+  padding: 13px 0;
+}
+
+nav .navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+nav .navbar .logo a {
+  font-weight: 500;
+  font-size: 35px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+nav.sticky .navbar .logo a {
+  color: var(--secondary-text);
+}
+
+nav .navbar .menu {
+  display: flex;
+  position: relative;
+}
+
+nav .navbar .menu li {
+  list-style: none;
+  margin: 0 8px;
+}
+
+.navbar .menu a {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 6px 0;
+  transition: color 0.4s ease;
+}
+
+.navbar .menu a:hover {
+  color: var(--primary-color);
+}
+
+nav.sticky .menu a {
+  color: var(--secondary-text);
+}
+
+nav.sticky .menu a:hover {
+  color: var(--text-color);
+}
+
+.navbar .media-icons a {
+  color: var(--primary-color);
+  font-size: 18px;
+  margin: 0 6px;
+  transition: color 0.3s ease;
+}
+
+nav.sticky .media-icons a {
+  color: var(--secondary-text);
+}
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn {
+  position: absolute;
+  color: var(--secondary-text);
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: none;
+}
+
+nav .menu-btn {
+  color: var(--primary-color);
+}
+
+nav.sticky .menu-btn {
+  color: var(--secondary-text);
+}
+
+.navbar .menu .cancel-btn {
+  color: var(--secondary-text);
+}
+
+/* Home Section Styling */
+.home {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.home .home-content {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home .text-one {
+  font-size: 25px;
+  color: var(--text-color);
+}
+
+.home .text-two {
+  color: var(--text-color);
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+  transition: font-size 0.3s ease;
+}
+
+.home .text-three {
+  font-size: 40px;
+  margin: 5px 0;
+  color: var(--primary-color);
+}
+
+.home .text-four {
+  font-size: 23px;
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.home .button {
+  margin: 14px 0;
+}
+
+.home .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: var(--primary-color);
+  color: var(--secondary-text);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.home .button button:hover {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-text);
+  color: var(--primary-color);
+}
+
+/* About Section Styling */
+section {
+  padding-top: 40px;
+}
+
+section .content {
+  width: 80%;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+section .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+section .title span {
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-color);
+  left: 0;
+  bottom: 0;
+}
+
+section .title span::after {
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about .about-details .left {
+  width: 45%;
+}
+
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-details .right {
+  width: 55%;
+}
+
+section .topic {
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.about-details .right p {
+  text-align: justify;
+  color: var(--text-color);
+}
+
+section .button {
+  margin: 16px 0;
+}
+
+section .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: var(--primary-color);
+  color: var(--secondary-text);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+section .button button:hover {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-text);
+  color: var(--primary-color);
+}
+
+/* Skills Section Styling */
+.skills {
+  background: var(--secondary-bg);
+}
+
+.skills .content {
+  padding: 40px 0;
+}
+
+.skills .skills-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-details .text {
+  width: 50%;
+}
+
+.skills-details p {
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.skills .skills-details .experience {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.skills-details .experience .num {
+  color: var(--text-color);
+  font-size: 80px;
+}
+
+.skills-details .experience .exp {
+  color: var(--text-color);
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.skills-details .boxes {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skills-details .box {
+  width: calc(50% - 10px);
+  margin: 20px 0;
+}
+
+.skills-details .boxes .topic {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.skills-details .boxes .per {
+  font-size: 60px;
+  color: var(--primary-color);
+}
+
+/* Services Section Styling */
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  overflow: hidden; /* Ensures the image doesn't overflow if it's larger */
+  border-radius: 50%; /* Makes the container circular */
+  border: 2px solid #ccc; /* Optional: Adds a border for better visibility */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.services .boxes .box {
+  margin: 20px 0;
+  width: calc(33.333% - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 10px;
+  background: var(--bg-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+
+.services .boxes .box:hover {
+  background: var(--primary-color);
+  color: var(--secondary-text);
+}
+
+.services .boxes .box .icon {
+  height: 50px;
+  width: 50px;
+  background: #23272f;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: var(--secondary-text);
+  margin: 0 auto 10px auto;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.boxes .box:hover .icon {
+  background-color: var(--secondary-text);
+  color: var(--primary-color);
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: var(--text-color);
+  transition: color 0.4s ease;
+}
+
+/* Contact Me Section Styling */
+.contact {
+  background: var(--secondary-bg);
+}
+
+.contact .content {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.contact .text {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer Styling */
+footer {
+  background: var(--primary-color);
+  padding: 15px 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+footer .text span {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--secondary-text);
+}
+
+footer .text span a {
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+footer .text span a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll To Top Button Styling */
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: var(--secondary-text);
+  background: var(--primary-color);
+  padding: 7px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Toggle Button Styling */
+.theme-toggle {
+  position: fixed; /* Keep it fixed on screen */
+  bottom: 80px; /* Position from bottom */
+  right: 20px; /* Position from right */
+  z-index: 9999; /* Ensure it stays above all content */
+  cursor: pointer;
+}
+.theme-toggle button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-text);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+.theme-toggle button:hover {
+  transform: scale(1.1);
+}
+
+nav.sticky .theme-toggle {
+  top: auto;
+}
+
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-details .right {
+    width: 90%;
+    margin: 40px 0;
+  }
+
+  .services .boxes .box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .about .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  nav .navbar {
+    width: 90%;
+  }
+
+  nav .navbar .menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: var(--text-color);
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  .navbar.active .menu {
+    left: 0;
+  }
+
+  nav .navbar .menu a {
+    font-size: 23px;
+    display: block;
+    color: var(--secondary-text);
+    margin: 10px 0;
+  }
+
+  nav.sticky .menu a:hover {
+    color: var(--primary-color);
+  }
+
+  nav .navbar .media-icons {
+    display: none;
+  }
+
+  nav .menu-btn,
+  .navbar .menu .cancel-btn {
+    display: block;
+  }
+
+  .home .text-two {
+    font-size: 65px;
+  }
+
+  .home .text-three {
+    font-size: 35px;
+  }
+
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .skills-details .text {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .services .boxes .box {
+    width: 100%;
+  }
+
+  .contact .text {
+    width: 100%;
+  }
+
+  .theme-toggle {
+    bottom: 80px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .text-two {
+    font-size: 55px;
+  }
+
+  .home .text-three {
+    font-size: 33px;
+  }
+
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: var(--primary-color);
+  }
+}
+a.box {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.box:visited {
+  color: inherit;
+}
